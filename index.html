@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predictor de Propiedades Dieléctricas</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.22.0"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>🔮 Predictor de Propiedades Dieléctricas</h1>
+        
+        <!-- Formulario de entrada -->
+        <div class="input-section">
+            <label for="er1">Permitividad Material 1 (er1):</label>
+            <input type="number" id="er1" step="0.01" value="1.0">
+            
+            <label for="er2">Permitividad Material 2 (er2):</label>
+            <input type="number" id="er2" step="0.01" value="2.5">
+            
+            <label for="V1">Volumen 1 (V1):</label>
+            <input type="number" id="V1" step="0.01" value="0.5">
+            
+            <label for="V2">Volumen 2 (V2):</label>
+            <input type="number" id="V2" step="0.01" value="0.5">
+            
+            <button id="predict-btn">Predecir</button>
+        </div>
+
+        <!-- Resultados -->
+        <div class="output-section">
+            <h2>Resultados:</h2>
+            <p id="er-output">Permitividad efectiva (er): <span class="value">-</span></p>
+            <p id="qf-output">Factor de calidad (Qf): <span class="value">-</span></p>
+            <p id="tcf-output">Coeficiente Térmico (Tcf): <span class="value">-</span></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
