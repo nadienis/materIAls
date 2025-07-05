@@ -4,7 +4,7 @@ let model;
 // Cargar el modelo al iniciar la página
 async function loadModel() {
     try {
-        model = await tf.loadGraphModel('model/model.json');
+        model = await tf.loadGraphModel('model.json');
         console.log("Modelo cargado correctamente");
     } catch (err) {
         console.error("Error al cargar el modelo:", err);
@@ -13,7 +13,7 @@ async function loadModel() {
 
 async function loadModel() {
     try {
-        const MODEL_URL = 'model/model.json'; // Ajusta esta ruta
+        const MODEL_URL = 'model.json'; // Ajusta esta ruta
         console.log("Intentando cargar modelo desde:", MODEL_URL);
         
         // Verifica si el archivo existe
