@@ -11,6 +11,26 @@ async function loadModel() {
     }
 }
 
+async function loadModel() {
+    try {
+        const MODEL_URL = 'model/model.json'; // Ajusta esta ruta
+        console.log("Intentando cargar modelo desde:", MODEL_URL);
+        
+        // Verifica si el archivo existe
+        const response = await fetch(MODEL_URL);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        model = await tf.loadGraphModel(MODEL_URL);
+        console.log("Modelo cargado:", model);
+        alert("Modelo cargado correctamente ✅");
+    } catch (err) {
+        console.error("Error al cargar el modelo:", err);
+        alert(`Error al cargar el modelo: ${err.message}`);
+    }
+}
+
 // Función de predicción
 async function predict() {
     if (!model) {
